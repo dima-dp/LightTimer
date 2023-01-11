@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Timer View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="TimerViewController" id="Y6W-OH-hqX" customClass="TimerViewController" customModule="LightTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3l-9e-576">
+                                <rect key="frame" x="90" y="68" width="234" height="80"/>
+                                <color key="backgroundColor" red="0.62374993850000005" green="0.51758333869999995" blue="0.96841138599999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="f4Z-A4-qSG"/>
+                                    <constraint firstAttribute="height" constant="80" id="v7F-cD-ZFG"/>
+                                </constraints>
+                                <color key="tintColor" red="0.8921070369807157" green="0.18931634980272055" blue="0.19450527819614977" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" titleAlignment="center">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Скинути налашування">
+                                            <attributes>
+                                                <font key="NSFont" size="25" name="HelveticaNeue-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <attributedString key="attributedSubtitle"/>
+                                    <color key="baseForegroundColor" systemColor="systemIndigoColor"/>
+                                    <color key="baseBackgroundColor" red="0.96841138599999999" green="0.61366127640000001" blue="0.2475925903" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="cancelTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fjK-WC-png"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="10" style="wheels" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0f-cS-XaC">
+                                <rect key="frame" x="0.0" y="203" width="414" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="9nU-1a-bKe"/>
+                                </constraints>
+                            </datePicker>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="s1S-Sg-2k4">
+                                <rect key="frame" x="0.0" y="203" width="320" height="216"/>
+                                <locale key="locale" localeIdentifier="uk"/>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E41-qV-rPf">
+                                <rect key="frame" x="90" y="449" width="234" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="dPg-Al-Fcn"/>
+                                </constraints>
+                                <color key="tintColor" red="0.081788577139999999" green="0.52931290860000002" blue="0.75622135400000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Зберегти">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Nle-JG-hGd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.25490196078431371" green="0.25098039215686274" blue="0.094117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstItem="E41-qV-rPf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="90" id="1Mz-CL-1i1"/>
+                            <constraint firstItem="M0f-cS-XaC" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="1lM-id-BC0"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="o3l-9e-576" secondAttribute="trailing" constant="90" id="H7r-tH-0ME"/>
+                            <constraint firstItem="M0f-cS-XaC" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="J3l-iG-0RS"/>
+                            <constraint firstItem="M0f-cS-XaC" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="QZa-DA-xCE"/>
+                            <constraint firstItem="M0f-cS-XaC" firstAttribute="top" secondItem="o3l-9e-576" secondAttribute="bottom" constant="55" id="Vy6-T6-BNb"/>
+                            <constraint firstItem="s1S-Sg-2k4" firstAttribute="leading" secondItem="M0f-cS-XaC" secondAttribute="leading" id="YF4-kv-p6L"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="E41-qV-rPf" secondAttribute="trailing" constant="90" id="buJ-Bc-6tZ"/>
+                            <constraint firstItem="o3l-9e-576" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="90" id="d1e-SR-Rjd"/>
+                            <constraint firstItem="M0f-cS-XaC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="eIx-LD-8BM"/>
+                            <constraint firstItem="o3l-9e-576" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="90" id="eV1-eH-ZNY"/>
+                            <constraint firstItem="M0f-cS-XaC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="f9j-Bp-f6r"/>
+                            <constraint firstItem="o3l-9e-576" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="hCa-85-abY"/>
+                            <constraint firstItem="E41-qV-rPf" firstAttribute="top" secondItem="s1S-Sg-2k4" secondAttribute="bottom" constant="30" id="p1Z-Jx-x8e"/>
+                            <constraint firstItem="o3l-9e-576" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="qHF-cR-4AM"/>
+                            <constraint firstItem="o3l-9e-576" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="rnV-43-tmE"/>
+                            <constraint firstItem="s1S-Sg-2k4" firstAttribute="top" secondItem="M0f-cS-XaC" secondAttribute="top" id="tK4-Zt-ezM"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="o3l-9e-576" secondAttribute="trailing" constant="90" id="xZA-T3-OLH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="timerAfter" destination="M0f-cS-XaC" id="4h8-m9-TfD"/>
+                        <outlet property="timerIn" destination="s1S-Sg-2k4" id="fLx-W9-wyg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="98.4375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
