@@ -23,13 +23,12 @@ class MainViewController: UIViewController {
     
     
     @IBAction func aboutTapped(_ sender: Any) {
-        showAbout()
+        showAbout()  // shows alert with information about App
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     
     
@@ -48,7 +47,7 @@ class MainViewController: UIViewController {
         let storyboard = UIStoryboard(name: vcName, bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: vcName) as! TimerViewController
         navigationController?.pushViewController(vc, animated: true)
-        if buttonNumber == 1 {
+        if buttonNumber == 1 { // checking what content to be shown on the next screen
             vc.buttonNumber = 1
         }
         else

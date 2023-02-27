@@ -10,7 +10,7 @@ import UIKit
 
 class TimerViewController: UIViewController {
     
-    var buttonNumber = 1
+    var buttonNumber = 1   // flag to check which button was pressed
     
     @IBOutlet weak var timerAfter: UIDatePicker!
     @IBOutlet weak var timerIn: UIDatePicker!
@@ -18,7 +18,7 @@ class TimerViewController: UIViewController {
     var taskID: UIBackgroundTaskIdentifier?
     
     
-    @IBAction func cancelTapped(_ sender: Any) {
+    @IBAction func cancelTapped(_ sender: Any) {  // cancelles the task
         
         let taskId = UIBackgroundTaskIdentifier(rawValue: UserDefaults.standard.integer(forKey: "MyTaskId"))
         endBackgroundUpdateTask(taskID: taskId)
@@ -27,7 +27,7 @@ class TimerViewController: UIViewController {
     
     @IBAction func saveTapped(_ sender: Any) {
         var seconds = 0
-        switch buttonNumber {
+        switch buttonNumber {  // checking what content to be shown on this screen - timer on time or timer after time
         case 1:
 
             let calendar = Calendar.current
@@ -35,26 +35,20 @@ class TimerViewController: UIViewController {
             
             seconds = (dateComponents.hour!  * 60 + dateComponents.minute!) * 60
             
-            
         case 2:
             let time = timerIn.date.timeIntervalSince(Date())
             
-            
-            print(time.description)
-            print(Date())
         default: return
         }
         
         saveTime(seconds)
         self.navigationController?.popViewController(animated: true)
-
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()        
         
-        if buttonNumber == 1 {
+        if buttonNumber == 1 { 
             
             configureOffAfter()
             
